@@ -57,3 +57,39 @@ El archivo `output/resultados_sanmarcos.xlsx` contiene las siguientes columnas:
 | Mérito E.P | Mérito en la escuela profesional |
 | Observación | Estado (ALCANZÓ VACANTE, AUSENTE, etc.) |
 | Carrera | Nombre de la carrera (agregado por el script) |
+
+## Tarea 2: API REST — Base de datos de videojuegos RAWG
+
+### ¿Qué hace?
+Consume la API de RAWG para extraer, analizar y comparar datos de videojuegos. Incluye exploración general, análisis por categorías, comparaciones entre plataformas/géneros/años, y exportación a CSV.
+
+### Flujo de trabajo
+1. **Configuración** — Se crea un cliente `RAWGClient` que encapsula las llamadas a la API y cuenta las solicitudes realizadas.
+2. **Parte A** — Consulta el total de juegos registrados en RAWG.
+3. **Parte B** — Obtiene los 5 mejores juegos por Metacritic y los 10 mejores en Steam.
+4. **Parte C** — Compara plataformas (PC vs PS5), géneros (Action, RPG, Puzzle, Strategy), años (2015, 2020, 2023), y exporta los top 20 a CSV.
+5. **Parte D** — Reflexiones y conclusiones personales sobre los datos obtenidos.
+
+### Cómo ejecutar
+1. Obtén tu API key en https://rawg.io/apidocs
+2. Pégala en la variable `API_KEY` dentro del notebook
+3. Ejecuta todas las celdas del notebook `api/tarea_rawg_api.ipynb`
+
+### Salida
+El archivo `api/output/top20_rawg.csv` contiene los 20 mejores juegos con: name, rating, metacritic, release_date, main_genre.
+
+## Estructura del repositorio
+
+```
+Scraping_data/
+├── scraper.py                        # Script principal (Tarea 1)
+├── README.md                         # Este archivo
+├── output/
+│   └── resultados_sanmarcos.xlsx     # Excel con resultados UNMSM
+├── api/
+│   ├── tarea_rawg_api.ipynb          # Notebook (Tarea 2)
+│   └── output/
+│       └── top20_rawg.csv            # CSV top 20 juegos
+└── video/
+    └── link.txt                      # Enlace al video explicativo
+
